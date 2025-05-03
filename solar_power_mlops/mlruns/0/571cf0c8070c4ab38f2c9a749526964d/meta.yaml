@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/571cf0c8070c4ab38f2c9a749526964d/artifacts
+deleted_time: 1746290793725
+end_time: 1746290677674
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 571cf0c8070c4ab38f2c9a749526964d
+run_name: bemused-snail-77
+run_uuid: 571cf0c8070c4ab38f2c9a749526964d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746290670124
+status: 3
+tags: []
+user_id: yuriy

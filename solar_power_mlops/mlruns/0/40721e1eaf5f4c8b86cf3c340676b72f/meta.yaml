@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/40721e1eaf5f4c8b86cf3c340676b72f/artifacts
+deleted_time: 1746292316130
+end_time: 1746291957586
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 40721e1eaf5f4c8b86cf3c340676b72f
+run_name: inquisitive-dog-785
+run_uuid: 40721e1eaf5f4c8b86cf3c340676b72f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746291956688
+status: 3
+tags: []
+user_id: yuriy

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/28e5fce9b23544f69365a390f4ed479f/artifacts
+deleted_time: 1746291742686
+end_time: 1746291729849
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 28e5fce9b23544f69365a390f4ed479f
+run_name: luminous-pug-88
+run_uuid: 28e5fce9b23544f69365a390f4ed479f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746291729586
+status: 4
+tags: []
+user_id: yuriy

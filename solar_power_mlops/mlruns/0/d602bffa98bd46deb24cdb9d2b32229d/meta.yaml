@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/d602bffa98bd46deb24cdb9d2b32229d/artifacts
+deleted_time: 1746291919900
+end_time: 1746291894417
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: d602bffa98bd46deb24cdb9d2b32229d
+run_name: skillful-sloth-153
+run_uuid: d602bffa98bd46deb24cdb9d2b32229d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746291893541
+status: 4
+tags: []
+user_id: yuriy

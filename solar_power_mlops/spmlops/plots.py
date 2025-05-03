@@ -2,9 +2,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import joblib
 import argparse
+import mlflow
 
 
-def plot_data(features_path, y_test_path, model_path, predictions_path, output_path):
+def plot_data(
+    features_path, y_test_path, model_path, predictions_path, output_path, log_to_mlflow=False
+):
     # Load data
     X_test = pd.read_csv(features_path)
     y_test = pd.read_csv(y_test_path)
@@ -44,15 +47,16 @@ def plot_data(features_path, y_test_path, model_path, predictions_path, output_p
     axs[1, 0].set_ylabel("Frequency")
     axs[1, 0].grid(True)
 
-    # 4. Time Series Plot (first 300 samples)
-    axs[1, 1].plot(y_test[:300].values, label="Actual", linewidth=2)
-    axs[1, 1].plot(predictions[:300].values, label="Predicted", linewidth=2, alpha=0.7)
+    # 4. Time Series Plot (first 300 samples) for DC_POWER and AC_POWER
+    axs[1, 1].plot(y_test.iloc[:300, 1].values, label="Actual AC", linewidth=2)
+    axs[1, 1].plot(predictions.iloc[:300, 1].values, label="Predicted AC", linewidth=2, alpha=0.7)
+    axs[1, 1].plot(y_test.iloc[:300, 0].values, label="Actual DC", linewidth=2)
+    axs[1, 1].plot(predictions.iloc[:300, 0].values, label="Predicted DC", linewidth=2, alpha=0.7)
     axs[1, 1].set_title("Time Series (First 300 samples)")
     axs[1, 1].set_xlabel("Sample Index")
     axs[1, 1].set_ylabel("Power Generation")
     axs[1, 1].legend()
     axs[1, 1].grid(True)
-
     plt.tight_layout()
     plt.savefig(output_path)
     plt.close()

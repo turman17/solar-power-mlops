@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/b639880d14414c09aceac6b546c2edde/artifacts
+end_time: 1746292563690
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b639880d14414c09aceac6b546c2edde
+run_name: placid-robin-890
+run_uuid: b639880d14414c09aceac6b546c2edde
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746292556131
+status: 3
+tags: []
+user_id: yuriy

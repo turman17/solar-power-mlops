@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/975763c63bd242438789acdcdcf3895e/artifacts
+deleted_time: 1746290793725
+end_time: 1746290280642
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 975763c63bd242438789acdcdcf3895e
+run_name: languid-ape-500
+run_uuid: 975763c63bd242438789acdcdcf3895e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746290273294
+status: 3
+tags: []
+user_id: yuriy

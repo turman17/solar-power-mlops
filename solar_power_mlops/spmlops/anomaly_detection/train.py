@@ -12,7 +12,7 @@ from spmlops.config import PROCESSED_DATA_DIR, MODELS_DIR
 app = typer.Typer()
 
 
-@app.command(name="train-anomaly-detection")
+@app.command()
 def train_anomaly_detection(
     X_train: Path = PROCESSED_DATA_DIR / "X_train.csv",
     X_test: Path = PROCESSED_DATA_DIR / "X_test.csv",

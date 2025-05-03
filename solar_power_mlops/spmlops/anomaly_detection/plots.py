@@ -7,7 +7,7 @@ import seaborn as sns
 import typer
 
 app = typer.Typer()
-@app.command(name="plot-anomaly-predictions")
+@app.command()
 def plot_anomaly_predictions(predictions_path: Path, output_path: Path):
     """
     Generate a bar plot of anomaly prediction counts.
@@ -42,7 +42,7 @@ def plot_anomaly_predictions(predictions_path: Path, output_path: Path):
 
 
 # New function: plot_anomaly_diagnostics
-@app.command(name="plot-anomaly-diagnostics")
+@app.command()
 def plot_anomaly_diagnostics(predictions_path: Path, output_path: Path):
     """
     Generate a composite plot with multiple visualizations of anomaly detection results.
@@ -99,7 +99,7 @@ def plot_anomaly_diagnostics(predictions_path: Path, output_path: Path):
         logger.error(f"Error generating anomaly diagnostics: {e}")
 
 
-@app.command(name="plot-anomaly-trigger-points")
+@app.command()
 def plot_anomaly_trigger_points(predictions_path: Path, features_path: Path, output_path: Path):
     """
     Generate a scatter plot of two selected features with anomalies highlighted.
