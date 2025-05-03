@@ -19,8 +19,10 @@ def plot_data(features_path, y_test_path, model_path, predictions_path, output_p
     fig, axs = plt.subplots(2, 2, figsize=(14, 10))
 
     # 1. Scatter Plot
-    axs[0, 0].scatter(y_test, predictions, alpha=0.5, color='orange', label="Predicted vs Actual")
-    axs[0, 0].plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'b--', label="Ideal")
+    axs[0, 0].scatter(y_test, predictions, alpha=0.5, color="orange", label="Predicted vs Actual")
+    axs[0, 0].plot(
+        [y_test.min(), y_test.max()], [y_test.min(), y_test.max()], "b--", label="Ideal"
+    )
     axs[0, 0].set_title("Scatter: Actual vs Predicted")
     axs[0, 0].set_xlabel("Actual")
     axs[0, 0].set_ylabel("Predicted")
@@ -29,14 +31,14 @@ def plot_data(features_path, y_test_path, model_path, predictions_path, output_p
 
     # 2. Residuals Plot
     axs[0, 1].scatter(range(len(residuals)), residuals, alpha=0.5)
-    axs[0, 1].axhline(0, color='red', linestyle='--')
+    axs[0, 1].axhline(0, color="red", linestyle="--")
     axs[0, 1].set_title("Residuals Plot")
     axs[0, 1].set_xlabel("Sample Index")
     axs[0, 1].set_ylabel("Residual (Actual - Predicted)")
     axs[0, 1].grid(True)
 
     # 3. Residual Histogram
-    axs[1, 0].hist(residuals, bins=50, color='skyblue', edgecolor='black')
+    axs[1, 0].hist(residuals, bins=50, color="skyblue", edgecolor="black")
     axs[1, 0].set_title("Histogram of Residuals")
     axs[1, 0].set_xlabel("Residual")
     axs[1, 0].set_ylabel("Frequency")
@@ -58,12 +60,26 @@ def plot_data(features_path, y_test_path, model_path, predictions_path, output_p
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Plot power generation predictions")
-    parser.add_argument("--features-path", type=str, required=True, help="Path to features CSV file")
-    parser.add_argument("--y-test-path", type=str, required=True, help="Path to true output CSV file")
+    parser.add_argument(
+        "--features-path", type=str, required=True, help="Path to features CSV file"
+    )
+    parser.add_argument(
+        "--y-test-path", type=str, required=True, help="Path to true output CSV file"
+    )
     parser.add_argument("--model-path", type=str, required=True, help="Path to trained model file")
-    parser.add_argument("--predictions-path", type=str, required=True, help="Path to predictions CSV file")
-    parser.add_argument("--output-path", type=str, required=True, help="Path to save the plot image")
+    parser.add_argument(
+        "--predictions-path", type=str, required=True, help="Path to predictions CSV file"
+    )
+    parser.add_argument(
+        "--output-path", type=str, required=True, help="Path to save the plot image"
+    )
 
     args = parser.parse_args()
 
-    plot_data(args.features_path, args.y_test_path, args.model_path, args.predictions_path, args.output_path)
+    plot_data(
+        args.features_path,
+        args.y_test_path,
+        args.model_path,
+        args.predictions_path,
+        args.output_path,
+    )
