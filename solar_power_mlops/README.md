@@ -1,61 +1,54 @@
-# workflow
+# Solar Power Output Forecasting
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+This project forecasts solar power generation (DC and AC power) using historical weather sensor data and generation data. It leverages a modern machine learning and MLOps workflow, including data preprocessing, feature engineering, model training, evaluation, and experiment tracking with MLflow.
 
-Forecasting solar power output using weather data with a modern ML/MLOps workflow.
+## 📈 What This Project Does
 
-## Project Organization
+- Cleans and merges generation and weather datasets from solar power plants
+- Builds predictive features based on temporal and weather-related inputs
+- Trains machine learning models to forecast power output
+- Tracks model performance metrics with MLflow
+- Generates plots for visual evaluation
+- Includes anomaly detection for monitoring unexpected behavior
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         spmlops and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── spmlops   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes spmlops a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+## 💡 How This Can Help
 
---------
+- Improve energy forecasting for grid integration
+- Enable proactive maintenance by identifying anomalies
+- Provide baseline predictions for smart solar applications
+- Demonstrate a full ML lifecycle in an energy-focused MLOps project
 
+## 🚀 How to Use
+
+1. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. **Run the full ML pipeline**:
+    ```bash
+    make prepare-data PLANT_ID=1
+    make build-features PLANT_ID=1
+    make split-data PLANT_ID=1
+    make train-model PLANT_ID=1
+    make predict PLANT_ID=1
+    make plot PLANT_ID=1
+    ```
+
+3. **Start the MLflow UI**:
+    ```bash
+    mlflow ui
+    ```
+
+4. **Explore results**:
+    - Trained model: `models/model_plant1.pkl`
+    - Prediction plots: `reports/figures/plot_plant1.png`
+    - MLflow dashboard at `http://localhost:5002`
+
+## 📊 Dataset Source
+
+The data used in this project is from the [Solar Power Generation Data](https://www.kaggle.com/datasets/anikannal/solar-power-generation-data) provided by the Indian Ministry of Power via Kaggle. It includes weather sensor data and power generation metrics from two solar power plants over 34 days.
+
+---
+
+This project is ideal for learning how to apply MLOps principles to time-series forecasting and energy analytics.
